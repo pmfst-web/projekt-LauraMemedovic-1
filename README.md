@@ -1,5 +1,5 @@
 # Projektne faze
-- [ ] - Opis projekta
+- [x] - Opis projekta
 - [ ] - Početna struktura aplikacije
 - [ ] - Prototip
 - [ ] - Konzultacije
@@ -8,12 +8,13 @@
 
 # Opis projekta
 ## Kratki opis
-Ovdje ide opis projekta
+Projekt će predstavljati igru vješala, tj. pogađanje tražene riječi. Korisnik će imati na raspolaganju slova abecede koja će moći odabrati. Nakon svakog odabira vidjet će je li odabrano slovo u riječi koja se treba pogoditi. Ako je, nastavlja dalje s pogađanjem slova. Ako nije, crta se glava, ruke, noge itd. Igra završava ako korisnik pogodi riječ ili ako je tijelo lika nacrtano do kraja, a riječ nije pogođena. Bilježi se i koliko je pokušaja bilo potrebno dok se riječ nije pogodila.
 
 ## Popis funkcionalnosti
-1. a
-2. b
-3. c
+1. Odabir kategorije pojmova koji će se pogađati
+2. Odabir slova
+3. Crtanje lika 
+4. Brojanje pokušaja
 
 
 ## UPUTE
