@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "projekt-template",
-    "slug": "projekt-template",
+    "name": "projekt",
+    "slug": "snack-f729b066-a959-4958-86d2-ea91d5cee9aa",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
