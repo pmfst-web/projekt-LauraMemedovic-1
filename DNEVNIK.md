@@ -1,12 +1,10 @@
 # Evidencija aktivnosti
-## dd.mm.2021.
+## 04.06.2023.
 Pocetak | Kraj
 ------- | ----
-hh:mm   | hh:mm
+18:00   | 20:00
 ### Kratki opis promjena
-Definirani zahtjevi aplikacije.
-Dovršena prva faza projekta.
+Okvirna struktura aplikacije.
+Dodane neke od komponenti i ekrani koje će igra sadržavati (početni ekran, ekran za igru, ekran za kraj igre).
 
-## 23.12.2021.
-### Kratki opis promjena
-Napravio sam navigaciju
+
