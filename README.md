@@ -1,11 +1,33 @@
-# Sample Snack app
+Projektne faze
+ - Opis projekta
+ - Početna struktura aplikacije
+ - Prototip
+ - Konzultacije
+ - Finalna verzija
+ - Obrana projekta
+Opis projekta
+Kratki opis
+Aplikacija za evidenciju sadržaja knjiga. Korisnik može odabrati željeni žanr te se nakon odabira žanra otvara ekran s popisom knjiga. Nakon odabira knjige korisnik može vidjeti kratki sadržaj knjige ako ju želi pročitati ili može dati ocjenu ako je knjigu već pročitao.
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+Popis funkcionalnosti
+a PRVI EKRAN - popis žanrova koji se nude, korisnik bira jedan od ponuđenih i klikom na botun otvara se drugi ekran
+b DRUGI EKRAN - popis knjiga iz odabranog žanra poredanih abecednim redom (korisnik može odabrati hoće li biti poredane prema autoru ili prema nazivu), odabirom jedne od knjiga otvara se treći ekran
+c TREĆI EKRAN - uvid u kratki sadržaj i mogućnost ocjenjivanja knjige(1-5)
+UPUTE
+Opis projekta
+Potrebno je napisati kratki opis projekta. Opis mora sadržavati popis osnovnih funkcionalnosti koje će biti implementirane (npr. "pretraživanje recepata", "unos novih recepta", "pretraživanje recepata po sastojcima" itd...)
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo-cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+Početna struktura aplikacije
+Potrebno je inicijalizirati početnu strukturu mobilne aplikacije. Pod strukturom se podrazumijeva da definirate koliko različitih ekrana će sadržavati vaša aplikacija i osmislite navigaciju između tih ekrana koristeći jedan (ili više) pristupa koje smo obradili u vježbama.
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+Prototip
+U ovoj fazi bi trebali imati "grubu" verziju svoje aplikacije. Ova verzija bi trebala imati implementirane osnovne funkcionalnosti koje su navedene u opisu projekta. Ne očekuje se da su implementirane SVE funkcionalnosti niti da su postojeće funkcionalnosti potpuno ispravne.
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+Konzultacije
+Nakon izrade prototipa potrebno se javiti nastavniku za termin konzultacija. Na konzultacijama ćete ukratko pokazati svoj prototip te će se po potrebi napraviti modifikacija početnih zahtjeva. Dovršeni projekti bez ove faze neće biti prihvaćeni.
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+Finalna verzija
+Nakon demonstracije prototipa možete nastaviti sa razvojem aplikacije i implementacijom svih funkcionalnosti. Prilikom razvoja potrebno je voditi dnevnik aktivnosti prema zadanim uputama.
+
+Obrana projekta
+Zadnja faza je obrana projekta - nakon završetka finalne verzije svoje aplikacije javite se nastavniku za dogovor oko termina obrane projekta.
