@@ -1,34 +1,27 @@
-import React, { useState } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createStore, combineReducers } from 'redux';
+import React from 'react';
 import { Provider } from 'react-redux';
-import rijecReducer from './store/reducers/rijeci';
+import { createStore } from 'redux';
+import gameReducer from './store/reducers/gameReducer';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import HomeScreen from './screens/HomeScreen';
+import GameScreen from './screens/GameScreen';
 
-import Igra from './screens/Igra';
-import Pocetni from './screens/Pocetni';
-import Kraj from './screens/Kraj';
-import Naslov from './components/Naslov';
-import Botun from './components/Botun';
-import { RIJECI } from './data/podaci';
+const Stack = createStackNavigator();
 
-const Stack = createNativeStackNavigator();
+const store = createStore(gameReducer) 
 
-const glavniReducer = combineReducers({
-  rijeci: rijecReducer,
-});
-
-const store = createStore(glavniReducer);
-
-export default function App() {
-
+const App = () => {
   return (
-    <Provider>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Pravila" component={HomeScreen} />
+          <Stack.Screen name="Igra" component={GameScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  
-});
+export default App;
