@@ -5,20 +5,21 @@ Projektne faze
  - Konzultacije
  - Finalna verzija
  - Obrana projekta
+ 
 Opis projekta
 Kratki opis
-Aplikacija za evidenciju sadržaja knjiga. Korisnik može odabrati željeni žanr te se nakon odabira žanra otvara ekran s popisom knjiga. Nakon odabira knjige korisnik može vidjeti kratki sadržaj knjige ako ju želi pročitati ili može dati ocjenu ako je knjigu već pročitao.
+Aplikacija predstavlja igru pogađanja skrivene riječi. Igrač ima 10 pokušaja da pogodi skrivenu riječ. Upisuje slova i klikom na botun provjerava se je li to slovo u skrivenoj riječi. Ako je, umjesto crtice u skrivenoj riječi pojavljuje se to slovo. Ako nije, igrač gubi život i nastavlja dalje pokušavati upisujući slova. Igra završava ako igrač pogodi riječ ili ako izgubi sve živote.
 
 Popis funkcionalnosti
-a PRVI EKRAN - popis žanrova koji se nude, korisnik bira jedan od ponuđenih i klikom na botun otvara se drugi ekran
-b DRUGI EKRAN - popis knjiga iz odabranog žanra poredanih abecednim redom (korisnik može odabrati hoće li biti poredane prema autoru ili prema nazivu), odabirom jedne od knjiga otvara se treći ekran
-c TREĆI EKRAN - uvid u kratki sadržaj i mogućnost ocjenjivanja knjige(1-5)
+a PRVI EKRAN - HomeScreen - početni ekran na kojem su napisana pravila.
+b DRUGI EKRAN - GameScreen - ekran na kojem se igra
+
 UPUTE
 Opis projekta
-Potrebno je napisati kratki opis projekta. Opis mora sadržavati popis osnovnih funkcionalnosti koje će biti implementirane (npr. "pretraživanje recepata", "unos novih recepta", "pretraživanje recepata po sastojcima" itd...)
+Igrač ima 10 pokušaja da pogodi skrivenu riječ. Upisuje slova i klikom na botun provjerava se je li to slovo u skrivenoj riječi. Ako je, umjesto crtice u skrivenoj riječi pojavljuje se to slovo. Ako nije, igrač gubi život i nastavlja dalje pokušavati upisujući slova. Igra završava ako igrač pogodi riječ ili ako izgubi sve živote.
 
 Početna struktura aplikacije
-Potrebno je inicijalizirati početnu strukturu mobilne aplikacije. Pod strukturom se podrazumijeva da definirate koliko različitih ekrana će sadržavati vaša aplikacija i osmislite navigaciju između tih ekrana koristeći jedan (ili više) pristupa koje smo obradili u vježbama.
+Aplikacija sadrži dva ekrana - HomeScreen i GameScreen. Na kraju igre prikazuje se dodatni ekran na kojem je prikazana poruka je li igrač pobijedio ili izgubio. 
 
 Prototip
 U ovoj fazi bi trebali imati "grubu" verziju svoje aplikacije. Ova verzija bi trebala imati implementirane osnovne funkcionalnosti koje su navedene u opisu projekta. Ne očekuje se da su implementirane SVE funkcionalnosti niti da su postojeće funkcionalnosti potpuno ispravne.
