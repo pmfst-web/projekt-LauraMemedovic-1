@@ -19,6 +19,8 @@ a PRVI EKRAN - HomeScreen - početni ekran na kojem su napisana pravila.
 
 b DRUGI EKRAN - GameScreen - ekran na kojem se igra
 
+c TREĆI EKRAN - EndScreen - ekran za kraj igre koji prikazuje je li igrač pobjedio ili izgubio
+
 
 UPUTE
 
@@ -29,7 +31,7 @@ Igrač ima 10 pokušaja da pogodi skrivenu riječ. Upisuje slova i klikom na bot
 
 Početna struktura aplikacije
 
-Aplikacija sadrži dva ekrana - HomeScreen i GameScreen. Na kraju igre prikazuje se dodatni ekran na kojem je prikazana poruka je li igrač pobijedio ili izgubio. 
+Aplikacija sadrži tri ekrana - HomeScreen, GameScreen i EndScreen. Prvi ekran je HomeScreen na kojem su napisana pravila igre. Drugi ekran GameScreen služi za igranje igre. Na kraju igre prikazuje se dodatni ekran na kojem je prikazana poruka je li igrač pobijedio ili izgubio. 
 
 
 Prototip
