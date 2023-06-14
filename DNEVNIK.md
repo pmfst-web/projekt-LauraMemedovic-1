@@ -33,4 +33,13 @@ Pocetak | Kraj
 Dodatne provjere funkcionalnosti aplikacije.
 Upload na GitHub.
 
+## 13.06.2023.
+Pocetak | Kraj
+------- | ----
+18:00   | 21:00
+### Kratki opis promjena
+Dodan ekran za kraj igre.
+Dodatne provjere funkcionalnosti aplikacije.
+Upload na GitHub.
+
 
