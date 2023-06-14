@@ -16,7 +16,7 @@ const gameReducer = (state = pocetnoStanje, action) => {
       return {
         ...state,
         skrivenaRijec: randomWord.toUpperCase(),
-        pogodenaRijec: '_'.repeat(randomWord.length).toUpperCase(), // Initialize guessedWord with underscores
+        pogodenaRijec: '_'.repeat(randomWord.length).toUpperCase(), //rijec koja se treba pogoditi prikazana crticama
         zivoti: 10,
         gameStatus: 'traje',
         krivaSlova: [],
@@ -28,21 +28,21 @@ const gameReducer = (state = pocetnoStanje, action) => {
       const novaPogodena = [...pogodenaRijec];
 
       if (krivaSlova.includes(slovo)) {
-        return state; // Return the state as it is without making any changes
+        return state; //vrati stanje kakvo je, bez promjena
       }
 
-      // Check if the guessed letter is in the hidden word
+      //provjera je li upisano slovo u skrivenoj rijeci
       if (skrivenaRijec.includes(slovo)) {
-        // Update the guessed word with the correct letter
+        //update rijeci koja se pogada sa upisanim slovom
         skrivenaRijec.split('').forEach((char, index) => {
           if (char === slovo) {
             novaPogodena[index] = char;
           }
         });
 
-        // Check if the player has won the game
+        //provjera je li igrac pobjedio
         if (!novaPogodena.includes('_')) {
-          // All letters have been guessed correctly
+          //sva slova su pogodena
           return {
             ...state,
             pogodenaRijec: novaPogodena.join(''),
@@ -50,13 +50,12 @@ const gameReducer = (state = pocetnoStanje, action) => {
           };
         }
       } else {
-        // Incorrect guess, decrement a life and store the wrong letter
+        //netocno slovo, gubi se zivot i u niz krivih slova se dodaje to slovo
         const noviZivoti = zivoti - 1;
         const novaKrivaSlova = [...krivaSlova, slovo];
 
-        // Check if the player has lost the game
+        //provjera je li igrac izgubio
         if (noviZivoti === 0) {
-          // No lives remaining
           return {
             ...state,
             pogodenaRijec: novaPogodena.join(''),
