@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
       </View>
       <Text style={styles.tekst}>
         {'Cilj igre je pogoditi skrivenu riječ.'+
-        ' \n Imaš 9 pokušaja da pogodiš.'+
+        ' \n Imaš 10 pokušaja da pogodiš.'+
         ' \n Svaki put kad upišeš krivo slovo gubiš život.'+
         ' \n Igra je gotova kad pogodiš riječ ili kad izgubiš sve živote.'}
       </Text>
