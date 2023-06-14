@@ -8,21 +8,21 @@ import Boje from '../constants/Boje';
 const pocetnoStanje = {
   skrivenaRijec: '',
   pogodenaRijec: '',
-  zivoti: 10, // Number of lives for the player
-  krivaSlova: [], // Array to store wrong letters
+  zivoti: 10, // broj života
+  krivaSlova: [], // niz pogrešnih slova
 };
 
-const GameScreen = () => {
+const GameScreen = ({navigation}) => {
   const [state, dispatch] = useReducer(gameReducer, pocetnoStanje);
   const { skrivenaRijec, pogodenaRijec, zivoti, gameStatus, krivaSlova } = state;
   const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     handleNewGame();
-  }, []); // Run only once on component mount
+  }, []); //pokrece se samo jednom na pocetku
 
   const handleGuess = () => {
-    // Dispatch the guessLetter action with the input value
+    //funkciji za provjeru slova se salje vrijednost inputa
     dispatch(pogodiSlovo(inputValue.toUpperCase()));
     setInputValue(''); // Clear the input value after guessing
   };
@@ -31,27 +31,14 @@ const GameScreen = () => {
     dispatch(startGame());
   };
 
+  const endGame = () => {
+    navigation.navigate('Kraj');
+  };
+
   const renderGameStatusMessage = () => {
-    if (gameStatus === 'pobjeda') {
-      return (
-        <View>
-          <Text style={styles.text}>Bravo! Pogodili ste skrivenu riječ!</Text>
-          <Text style={styles.text}>Tražena riječ: {skrivenaRijec}</Text>
-          <View style={styles.buttonContainer}>
-            <Button title="NOVA IGRA" onPress={handleNewGame} />
-          </View>
-        </View>
-      );
-    } else if (gameStatus === 'gubitak') {
-      return (
-        <View>
-          <Text style={styles.text}>Igra izgubljena!</Text>
-          <Text style={styles.text}>Skrivena riječ: {skrivenaRijec}</Text>
-          <View style={styles.buttonContainer}>
-            <Button title="NOVA IGRA" onPress={handleNewGame} />
-          </View>
-        </View>
-      );
+    if (gameStatus === 'pobjeda' || gameStatus === 'gubitak') {
+      navigation.navigate('Kraj', { gameStatus, skrivenaRijec }); // Prijelaz na ekran za kraj igre
+      return null; // Ne prikazuje nista na trenutnom ekranu
     } else {
       return (
         <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -69,8 +56,8 @@ const GameScreen = () => {
                 const filteredText = text.replace(/[^a-zA-ZčćžšđČĆŽŠĐ]/g, '');
                 setInputValue(filteredText.charAt(0));
               }}
-              maxLength={1} // Limit input to one character
-              value={inputValue} // Set the input value
+              maxLength={1} //ogranicen input na jedno slovo
+              value={inputValue} //postavljanje input vrijednosti
             />
             <View style={styles.buttonContainer}>
               <Button title="POGODI" onPress={handleGuess} />
