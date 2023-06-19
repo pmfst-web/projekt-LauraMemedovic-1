@@ -2,14 +2,14 @@ import { START_GAME, POGODI_SLOVO } from '../types';
 
 import {getRandomWord} from '../podaci/rijeci'
 
-export const startGame = () => {
+export const startGame = (brojZivota) => {
   const randomWord = getRandomWord();
   return {
     type: START_GAME,
     payload: {
       skrivenaRijec: randomWord,
       pogodenaRijec: '_'.repeat(randomWord.length),
-      zivoti: 10,
+      zivoti: brojZivota,
     },
   };
 };
