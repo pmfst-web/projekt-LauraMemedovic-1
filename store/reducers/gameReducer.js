@@ -17,7 +17,7 @@ const gameReducer = (state = pocetnoStanje, action) => {
         ...state,
         skrivenaRijec: randomWord.toUpperCase(),
         pogodenaRijec: '_'.repeat(randomWord.length).toUpperCase(), //rijec koja se treba pogoditi prikazana crticama
-        zivoti: 10,
+        zivoti: action.payload.zivoti,
         gameStatus: 'traje',
         krivaSlova: [],
       };
