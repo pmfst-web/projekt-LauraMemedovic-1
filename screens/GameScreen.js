@@ -1,7 +1,6 @@
 import React, { useState, useReducer, useEffect } from 'react';
-import { StyleSheet, View, Text, TextInput, Button, ScrollView, } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
-import { pogodiSlovo, startGame } from '../store/actions/gameActions';
+import { StyleSheet, View, Text, TextInput, Button, ScrollView,} from 'react-native';
+import { pogodiSlovo, startGame} from '../store/actions/gameActions';
 import gameReducer from '../store/reducers/gameReducer';
 
 const pocetnoStanje = {
@@ -11,11 +10,11 @@ const pocetnoStanje = {
   krivaSlova: [], // niz pogrešnih slova
 };
 
-const GameScreen = ({navigation, route}) => {
+const GameScreen = ({ navigation, route }) => {
   const [state, dispatch] = useReducer(gameReducer, pocetnoStanje);
   const { skrivenaRijec, pogodenaRijec, zivoti, gameStatus, krivaSlova } = state;
   const [inputValue, setInputValue] = useState('');
-  const { tezina } = route.params; // dohvaća odabranu težine iz props-a rute
+  const { tezina, kategorija } = route.params; // dohvaća odabranu tezinu i kategoriju sa HomeScreen
 
   useEffect(() => {
     handleNewGame();
@@ -24,11 +23,12 @@ const GameScreen = ({navigation, route}) => {
   const handleGuess = () => {
     //funkciji za provjeru slova se salje vrijednost inputa
     dispatch(pogodiSlovo(inputValue.toUpperCase()));
-    setInputValue(''); // Clear the input value after guessing
+    setInputValue(''); 
   };
 
   const handleNewGame = () => {
-    let brojZivota = 10; //pocetni broj zivota za "lagano"
+    let brojZivota = 10; 
+    let odabranaKategorija = 'filmovi';
 
     if (tezina === 'srednje') {
       brojZivota = 7;
@@ -36,11 +36,13 @@ const GameScreen = ({navigation, route}) => {
       brojZivota = 5;
     }
 
-    dispatch(startGame(brojZivota)); //prijenos broja zivota
-  };
+    if (kategorija === 'filmovi') {
+      odabranaKategorija = 'filmovi';
+    } else if (kategorija === 'serije') {
+      odabranaKategorija = 'serije';
+    }
 
-  const endGame = () => {
-    navigation.navigate('Kraj');
+    dispatch(startGame(brojZivota, odabranaKategorija)); //prijenos broja zivota i odabrane kategorije
   };
 
   const renderGameStatusMessage = () => {
@@ -52,7 +54,8 @@ const GameScreen = ({navigation, route}) => {
         <ScrollView contentContainerStyle={styles.scrollContainer}>
           <View style={styles.contentContainer}>
             <Text style={styles.text}>
-              Skrivena riječ: {pogodenaRijec || '_'.repeat(skrivenaRijec.length)}
+              Skrivena riječ:{' '}
+              {pogodenaRijec || '_'.repeat(skrivenaRijec.length)}
             </Text>
             <Text style={styles.text}>Broj života: {zivoti}</Text>
             <Text style={styles.text}>
