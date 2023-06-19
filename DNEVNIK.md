@@ -45,8 +45,8 @@ Upload na GitHub.
 ## 19.06.2023.
 Pocetak | Kraj
 ------- | ----
-19:00   | 22:00
+19:00   | 01:00
 ### Kratki opis promjena
-Dodavanje mogućnosti odabira težine igre na početni ekran.
+Dodavanje mogućnosti odabira težine igre (lagano/srednje/teško) i kategorije (filmovi/serije) na početni ekran.
 
 
