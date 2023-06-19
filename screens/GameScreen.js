@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, TextInput, Button, ScrollView, } from 'react-na
 import { useDispatch, useSelector } from 'react-redux';
 import { pogodiSlovo, startGame } from '../store/actions/gameActions';
 import gameReducer from '../store/reducers/gameReducer';
-import Boje from '../constants/Boje';
 
 const pocetnoStanje = {
   skrivenaRijec: '',
@@ -12,10 +11,11 @@ const pocetnoStanje = {
   krivaSlova: [], // niz pogrešnih slova
 };
 
-const GameScreen = ({navigation}) => {
+const GameScreen = ({navigation, route}) => {
   const [state, dispatch] = useReducer(gameReducer, pocetnoStanje);
   const { skrivenaRijec, pogodenaRijec, zivoti, gameStatus, krivaSlova } = state;
   const [inputValue, setInputValue] = useState('');
+  const { tezina } = route.params; // dohvaća odabranu težine iz props-a rute
 
   useEffect(() => {
     handleNewGame();
@@ -28,7 +28,15 @@ const GameScreen = ({navigation}) => {
   };
 
   const handleNewGame = () => {
-    dispatch(startGame());
+    let brojZivota = 10; //pocetni broj zivota za "lagano"
+
+    if (tezina === 'srednje') {
+      brojZivota = 7;
+    } else if (tezina === 'teško') {
+      brojZivota = 5;
+    }
+
+    dispatch(startGame(brojZivota)); //prijenos broja zivota
   };
 
   const endGame = () => {
