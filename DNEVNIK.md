@@ -42,4 +42,11 @@ Dodan ekran za kraj igre.
 Dodatne provjere funkcionalnosti aplikacije.
 Upload na GitHub.
 
+## 19.06.2023.
+Pocetak | Kraj
+------- | ----
+19:00   | 22:00
+### Kratki opis promjena
+Dodavanje mogućnosti odabira težine igre na početni ekran.
+
 
