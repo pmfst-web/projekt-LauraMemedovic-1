@@ -11,11 +11,11 @@ Opis projekta
 
 Kratki opis
 
-Aplikacija predstavlja igru pogađanja skrivene riječi. Igrač ima onoliko pokušaja da pogodi skrivenu riječ ovisno o težini igre koju je odabrao (lagano/srednje/teško). Upisuje slova i klikom na botun provjerava se je li to slovo u skrivenoj riječi. Ako je, umjesto crtice u skrivenoj riječi pojavljuje se to slovo. Ako nije, igrač gubi život i nastavlja dalje pokušavati upisujući slova. Igra završava ako igrač pogodi riječ ili ako izgubi sve živote.
+Aplikacija predstavlja igru pogađanja skrivene riječi. Igrač ima onoliko pokušaja da pogodi skrivenu riječ ovisno o težini igre koju je odabrao (lagano/srednje/teško). Na početku se odabire i kategorija pojmova koji se trebaju pogađati - filmovi ili serije. Upisuje slova i klikom na botun provjerava se je li to slovo u skrivenoj riječi. Ako je, umjesto crtice u skrivenoj riječi pojavljuje se to slovo. Ako nije, igrač gubi život i nastavlja dalje pokušavati upisujući slova. Igra završava ako igrač pogodi riječ ili ako izgubi sve živote.
 
 Popis funkcionalnosti
 
-a PRVI EKRAN - HomeScreen - početni ekran na kojem su napisana pravila i na kojem se odabire težina igre (lagano/srednje/teško).
+a PRVI EKRAN - HomeScreen - početni ekran na kojem su napisana pravila i na kojem se odabire težina igre (lagano/srednje/teško) i kategorija pojmova (filmovi/serije).
 
 b DRUGI EKRAN - GameScreen - ekran na kojem se igra
 
@@ -26,12 +26,12 @@ UPUTE
 
 Opis projekta
 
-Igrač na početku igre odabire težinu - lagano znači da ima 10 pokušaja za pogoditi skrivenu riječ, srednje da ima 7 pokušaja, a teško da ima 5 pokušaja. Upisuje slova i klikom na botun provjerava se je li to slovo u skrivenoj riječi. Ako je, umjesto crtice u skrivenoj riječi pojavljuje se to slovo. Ako nije, igrač gubi život i nastavlja dalje pokušavati upisujući slova. Igra završava ako igrač pogodi riječ ili ako izgubi sve živote.
+Igrač na početku igre odabire težinu - lagano znači da ima 10 pokušaja za pogoditi skrivenu riječ, srednje da ima 7 pokušaja, a teško da ima 5 pokušaja te kategoriju (filmovi/serije). Upisuje slova i klikom na botun provjerava se je li to slovo u skrivenoj riječi. Ako je, umjesto crtice u skrivenoj riječi pojavljuje se to slovo. Ako nije, igrač gubi život i nastavlja dalje pokušavati upisujući slova. Igra završava ako igrač pogodi riječ ili ako izgubi sve živote.
 
 
 Početna struktura aplikacije
 
-Aplikacija sadrži tri ekrana - HomeScreen, GameScreen i EndScreen. Prvi ekran je HomeScreen na kojem su napisana pravila igre i odabir težine igre. Drugi ekran GameScreen služi za igranje igre. Na kraju igre prikazuje se dodatni ekran na kojem je prikazana poruka je li igrač pobijedio ili izgubio. 
+Aplikacija sadrži tri ekrana - HomeScreen, GameScreen i EndScreen. Prvi ekran je HomeScreen na kojem su napisana pravila igre, odabir težine igre i kategorije pojmova. Drugi ekran GameScreen služi za igranje igre. Na kraju igre prikazuje se dodatni ekran na kojem je prikazana poruka je li igrač pobijedio ili izgubio. 
 
 
 Prototip
