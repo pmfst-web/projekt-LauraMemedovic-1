@@ -1,40 +1,58 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Button, Text, Image } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   const [tezina, setTezina] = useState('lagano');
+  const [kategorija, setKategorija] = useState('filmovi');
 
   const startGame = () => {
-    navigation.navigate('Igra', {tezina});
+    navigation.navigate('Igra', { tezina, kategorija });
   };
 
   const handleTezinaChange = (novaTezina) => {
     setTezina(novaTezina);
   };
 
+  const handleKategorijaChange = (novaKategorija) => {
+    setKategorija(novaKategorija);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.tekst}>
-        {'Cilj igre je pogoditi skrivenu riječ.'+
-        ' \n Odaberi težinu igre:'+
-        '\n LAGANO: 10 života' +
-        '\n SREDNJE: 7 života' +
-        '\n TEŠKO: 5 života' +
-        ' \n Svaki put kad upišeš krivo slovo gubiš život.'+
-        ' \n Igra je gotova kad pogodiš riječ ili kad izgubiš sve živote.'}
+        {'Odaberi težinu igre:' +
+          '\n LAGANO: 10 života' +
+          '\n SREDNJE: 7 života' +
+          '\n TEŠKO: 5 života' +
+          '\n Odaberi kategoriju: FILMOVI / SERIJE' +
+          ' \n Svaki put kad upišeš krivo slovo gubiš život.' +
+          ' \n Igra je gotova kad pogodiš riječ ili kad izgubiš sve živote.'}
       </Text>
       <View style={styles.tipkeContainer}>
         <Button title="LAGANO" onPress={() => handleTezinaChange('lagano')} />
         <Button title="SREDNJE" onPress={() => handleTezinaChange('srednje')} />
         <Button title="TEŠKO" onPress={() => handleTezinaChange('teško')} />
       </View>
-      {tezina && (
-      <View>
-        <Text style={styles.tekst}>
-          Odabrana težina: {tezina}
-        </Text>
+      <View style={styles.tipkeContainer}>
+        <Button
+          title="FILMOVI"
+          onPress={() => handleKategorijaChange('filmovi')}
+        />
+        <Button
+          title="SERIJE"
+          onPress={() => handleKategorijaChange('serije')}
+        />
       </View>
-    )}
+      {tezina && (
+        <View>
+          <Text style={styles.tekst}>Odabrana težina: {tezina}</Text>
+        </View>
+      )}
+      {kategorija && (
+        <View>
+          <Text style={styles.tekst}>Odabrana kategorija: {kategorija}</Text>
+        </View>
+      )}
       <View>
         <Button title="ZAPOČNI IGRU" onPress={startGame} />
       </View>
@@ -63,11 +81,11 @@ const styles = StyleSheet.create({
     lineHeight: 30,
   },
   tipkeContainer: {
-    flexDirection: 'row', 
-    justifyContent: 'space-evenly', 
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
     width: '100%',
-    marginTop: 25,
-    marginBottom: 25,
+    marginTop: 20,
+    marginBottom: 20,
   },
 });
 
