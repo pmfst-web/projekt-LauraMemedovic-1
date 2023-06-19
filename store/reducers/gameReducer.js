@@ -1,8 +1,9 @@
 import { START_GAME, POGODI_SLOVO } from '../types';
 
-import {getRandomWord} from '../podaci/rijeci'
+import { getRandomMovie, getRandomSeries } from '../podaci/rijeci';
 
 const pocetnoStanje = {
+  kategorija: '',
   skrivenaRijec: '',
   pogodenaRijec: '',
   zivoti: 10,
@@ -12,11 +13,29 @@ const pocetnoStanje = {
 const gameReducer = (state = pocetnoStanje, action) => {
   switch (action.type) {
     case START_GAME:
-      const randomWord = getRandomWord();
+      const { kategorija } = action.payload;
+      let randomWord = '';
+      let pogodenaRj = '';
+
+      if (kategorija === 'filmovi') {
+        randomWord = getRandomMovie();
+      } else if (kategorija === 'serije') {
+        randomWord = getRandomSeries();
+      }
+
+      for (let i = 0; i < randomWord.length; i++) {
+        if (randomWord[i] === ' ') {
+          pogodenaRj += ' '; //razmak ako je razmak
+        } else {
+          pogodenaRj += '_'; //underscore ako je slovo
+        }
+      }
+
       return {
         ...state,
+        kategorija: action.payload.kategorija,
         skrivenaRijec: randomWord.toUpperCase(),
-        pogodenaRijec: '_'.repeat(randomWord.length).toUpperCase(), //rijec koja se treba pogoditi prikazana crticama
+        pogodenaRijec: pogodenaRj.toUpperCase(), //rijec koja se treba pogoditi prikazana crticama
         zivoti: action.payload.zivoti,
         gameStatus: 'traje',
         krivaSlova: [],
