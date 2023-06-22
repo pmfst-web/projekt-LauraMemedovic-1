@@ -20,13 +20,12 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.tekst}>
-        {'Odaberi težinu igre:' +
+        {'Pogodi skrivenu riječ!' +
+        '\n Odaberi težinu igre:' +
           '\n LAGANO: 10 života' +
           '\n SREDNJE: 7 života' +
           '\n TEŠKO: 5 života' +
-          '\n Odaberi kategoriju: FILMOVI / SERIJE' +
-          ' \n Svaki put kad upišeš krivo slovo gubiš život.' +
-          ' \n Igra je gotova kad pogodiš riječ ili kad izgubiš sve živote.'}
+          '\n Odaberi kategoriju: FILMOVI / SERIJE'}
       </Text>
       <View style={styles.tipkeContainer}>
         <Button title="LAGANO" onPress={() => handleTezinaChange('lagano')} />
